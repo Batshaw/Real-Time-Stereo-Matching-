@@ -1,0 +1,22 @@
+{
+	"build_systems":
+	[
+		{
+			"cmd":
+			[      
+				"make",
+				"install",
+				"-j4"
+			],
+			"file_regex": "^(..[^:]*):(.*)$",
+			"name": "dense_stereo_matching",
+			"working_dir": "${project_path}/build"
+		}
+	],
+	"folders":
+	[
+		{
+			"path": "."
+		}
+	]
+}

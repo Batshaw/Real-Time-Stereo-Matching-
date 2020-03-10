@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ConfigFile VendorName="Baumer" MajorVersion="1" MinorVersion="5" SubMinorVersion="3">
+	<FileVersion>1.5.3.0</FileVersion>
+	<Resend>
+		<Version>1</Version>
+		<Version1>
+			<!--Set the maximum number of resend requests per image (default 500)-->
+			<MaxResendsPerImage>500</MaxResendsPerImage>
+			<!--Set the maximum number of resend requests per packet (default 3)-->
+			<MaxResendsPerPacket>3</MaxResendsPerPacket>
+			<!--Set the number of packets to wait befor sending the first resend requests (default 0)-->
+			<FirstResendWaitPackets>0</FirstResendWaitPackets>
+			<!--Set the time in ms to wait befor sending the first resend requests (default 50)-->
+			<FirstResendWaitTime>50</FirstResendWaitTime>
+			<!--Set the number of packets to wait befor sending the next resend requests (default 10)-->
+			<NextResendWaitPackets>10</NextResendWaitPackets>
+			<!--Set the time in ms to wait befor sending the next resend requests (default 100)-->
+			<NextResendWaitTime>100</NextResendWaitTime>
+		</Version1>
+	</Resend>
+	<GVCP>
+		<!--Set Timeout(in ms) and number of retrys for control channel-->
+		<ControlChannelTimeout>1000</ControlChannelTimeout>
+		<ControlChannelRetrys>5</ControlChannelRetrys>
+		<!--Set Timeout(in ms) and number of retrys for asynchron messages from the camera (if supported) -->
+		<MessageChannelTimeout>100</MessageChannelTimeout>
+		<MessageChannelRetrys>2</MessageChannelRetrys>
+	</GVCP>
+	<Discovery>
+		<!--
+			Use global discovery
+			1 = enabled
+			0 = disabled (default)
+		-->
+		<GlobalDiscovery>0</GlobalDiscovery>
+		<!--
+			Timeout for discovery command in ms (default 500)
+		-->
+		<DiscoveryTimeout>500</DiscoveryTimeout>
+		<!--
+			Number of retrys for discovery (default 3)
+		-->
+		<DiscoveryRetrys>3</DiscoveryRetrys>
+		<!--
+			Use DetectDeviceAdd to detect the adding of devices 
+			(This option is used for the PnP Callback)
+			1 = enabled (default)
+			0 = disabled
+		-->
+		<DetectDeviceAdd>1</DetectDeviceAdd>
+		<!--
+		Set the time between two PnP requests
+		(higher time means less traffic but also less precession)
+		-->
+		<PnPWaitTime>3000</PnPWaitTime>
+		<!--
+			Use Bind to select specific Ports
+			(Turn this off if you have problems whit capturing images)
+			1 = enabled (default)
+			0 = disabled
+		-->
+		<UseBind>1</UseBind>
+	</Discovery>
+	<Camera>
+		<!-- 
+			TXG only!
+			Sets the Number of internel CameraBuffers
+			only possible:  
+			0 = dont care (factory default) or 	
+			2, 4, 8, 16, 32
+		-->
+		<BufferNumber>0</BufferNumber>
+		<!--
+			Use the Infoheader of the Camera
+			1 = enabled (default)
+			0 = disabled
+		-->
+		<UseInfoHeader>1</UseInfoHeader>
+		<!--
+			TXG only!
+			Discards invalid Images (If the Infoheader is enabled, it will be checked too.)
+			1 = enabled (default)
+			0 = disabled
+		-->
+		<CheckImageSettings>1</CheckImageSettings>
+		<!--
+			Discards invalid Images (If the Infoheader is enabled, it will be checked too.)
+			1 = enabled (default)
+			0 = disabled
+		-->
+		<DiscardCorruptedImages>1</DiscardCorruptedImages>
+		<!--
+			set current MTU to avoid detection at camera open (this will save several seconds)
+			0 = MTU Autodetection (default)
+			576-16k = current MTU
+		-->
+		<CurrentMaxMtu>0</CurrentMaxMtu>
+		<!--
+			Sets the Packetsize to an optimized Value after MTU detection
+			(currently 80% of max value of autodetection or 100% of the user set value)
+			1 = enabled (default)
+			0 = disabled
+		-->
+		<OptimizePacketsize>1</OptimizePacketsize>
+		<!--
+			Increases Thread Priority for Packet Receice to minimize wait time
+			(currently only available for Windows!)
+			1 = enabled (default)
+			0 = disabled
+		-->
+		<IncreaseThreadPriority>1</IncreaseThreadPriority>
+	</Camera>
+</ConfigFile>
+<!-- EOF -->

@@ -1,0 +1,13 @@
+Intrinsic parameters:
+Image center: u0 = 255.725388, v0 = 254.491196
+Scale factor: 
+au = 879.600586, av = 1104.860840
+Image size: dimx = 512, dimy = 512
+Focale: 1.0
+Extrinsic parameters:
+Rotation:
+{{0.706968, 0.002042, 0.707243},
+ {-0.000124, 0.999996, -0.002764},
+ {-0.707246, 0.001866, 0.706966}}
+Translation:
+{-598.124023, 150.494293, -810.921265}
